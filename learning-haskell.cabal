@@ -5,13 +5,17 @@ Synopsis:            Project for learning Haskell, will 'Learn You a Haskell for
 License:             BSD3
 Author:              Marek Dudek
 Maintainer:          marek.dudek@gmail.com
+Build-Type:          Simple
+Cabal-Version:       >=1.8
 
-Build-type:          Simple
-Cabal-version:       >=1.8
-
-library
-  exposed-modules:     SomeModule
+Library
   hs-source-dirs:      src
-  -- other-modules:       
+  exposed-modules:     SomeModule
   build-depends:       base ==4.5.*
+
+Test-Suite simple-test
+    type:              exitcode-stdio-1.0
+    hs-source-dirs:    testsuite
+    main-is:           SimpleTest.hs
+    build-depends:     base ==4.5.*
 
