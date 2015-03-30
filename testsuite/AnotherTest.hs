@@ -1,7 +1,15 @@
 module Main where
 
-import System.Exit (exitFailure)
+import Test.Framework
+import Test.Framework.Providers.HUnit
+import Test.HUnit
 
-main = do
-  putStrLn "!!! This test also fails always !!!"
-  exitFailure
+main = defaultMain tests
+
+tests = [
+    testGroup "group 1" [
+      testCase "test 1" (
+        assertEqual "" (1+2) 3
+      )
+    ]
+  ]
