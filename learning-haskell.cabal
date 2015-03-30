@@ -19,3 +19,9 @@ Test-Suite some-test
     main-is:           SomeTest.hs
     build-depends:     base ==4.5.*
 
+Test-Suite another-test
+    type:              exitcode-stdio-1.0
+    hs-source-dirs:    testsuite
+    main-is:           AnotherTest.hs
+    build-depends:     base ==4.5.*
+
