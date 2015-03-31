@@ -13,12 +13,6 @@ Library
   exposed-modules:     SomeModule
   build-depends:       base >= 4
 
-Test-Suite some-test
-    type:              exitcode-stdio-1.0
-    hs-source-dirs:    testsuite
-    main-is:           SomeTest.hs
-    build-depends:     base >= 4
-
 Test-Suite hunit-test
     type:              exitcode-stdio-1.0
     hs-source-dirs:    testsuite
@@ -27,12 +21,11 @@ Test-Suite hunit-test
                        test-framework,
                        test-framework-hunit,
                        HUnit
-
-Test-Suite learing-hunit
+Test-Suite quickcheck-test
     type:              exitcode-stdio-1.0
     hs-source-dirs:    testsuite
-    main-is:           LearningHUnit.hs
+    main-is:           QuickCheckTest.hs
     build-depends:     base >= 4,
                        test-framework,
-                       test-framework-hunit,
-                       HUnit
+                       test-framework-quickcheck,
+                       QuickCheck
