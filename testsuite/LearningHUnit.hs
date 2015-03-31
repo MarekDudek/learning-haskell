@@ -8,12 +8,12 @@ import Test.Framework.Providers.HUnit (hUnitTestToTests)
 
 addition :: Test
 addition = TestCase(
-    assertEqual "one plus two is three" (1+2) 3
+    assertEqual "one plus two is three"  3  (1+2)
   )
 
 multiplication :: Test
 multiplication = TestCase(
-    assertEqual "two times two is four" (2*2) 4
+    assertEqual "two times two is four"  4  (2*2) 
   )
 
 verboseTests :: Test
@@ -22,8 +22,8 @@ verboseTests = TestList [TestLabel "Addition" addition, TestLabel "Multiplicatio
 
 succintTests :: Test
 succintTests = test [
-    "Addition"       ~: "1+2 = 3" ~: (1+2) ~=? 3,
-    "Multiplication" ~: "2+3 = 5" ~: (2+3) ~=? 5
+    "Addition"       ~: "1 + 2 = 3" ~: 3 ~=? (1+2),
+    "Multiplication" ~: "2 * 2 = 4" ~: 4 ~=? (2*2)
   ]
 
 
