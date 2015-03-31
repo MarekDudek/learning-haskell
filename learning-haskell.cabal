@@ -27,5 +27,5 @@ Test-Suite quickcheck-test
     main-is:           QuickCheckTest.hs
     build-depends:     base >= 4,
                        test-framework,
-                       test-framework-quickcheck,
-                       QuickCheck
+                       test-framework-quickcheck2,
+                       QuickCheck >= 2
