@@ -1,7 +1,6 @@
-
 Name:                learning-haskell
 Version:             0.1.0.0
-Synopsis:            Project for learning Haskell, will 'Learn You a Haskell for greater good' and 'Real-world Haskell'
+Synopsis:            Project for learning Haskell, with 'Learn You a Haskell for great good' and 'Real-world Haskell'
 License:             BSD3
 Author:              Marek Dudek
 Maintainer:          marek.dudek@gmail.com
