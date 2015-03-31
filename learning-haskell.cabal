@@ -27,3 +27,12 @@ Test-Suite hunit-test
                        test-framework,
                        test-framework-hunit,
                        HUnit
+
+Test-Suite learing-hunit
+    type:              exitcode-stdio-1.0
+    hs-source-dirs:    testsuite
+    main-is:           LearningHUnit.hs
+    build-depends:     base >= 4,
+                       test-framework,
+                       test-framework-hunit,
+                       HUnit
