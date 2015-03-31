@@ -18,14 +18,15 @@ Test-Suite hunit-test
     hs-source-dirs:    testsuite
     main-is:           HUnitTest.hs
     build-depends:     base >= 4,
+                       HUnit,
                        test-framework,
-                       test-framework-hunit,
-                       HUnit
+                       test-framework-hunit
+
 Test-Suite quickcheck-test
     type:              exitcode-stdio-1.0
     hs-source-dirs:    testsuite
     main-is:           QuickCheckTest.hs
     build-depends:     base >= 4,
+                       QuickCheck >= 2,
                        test-framework,
-                       test-framework-quickcheck2,
-                       QuickCheck >= 2
+                       test-framework-quickcheck2
