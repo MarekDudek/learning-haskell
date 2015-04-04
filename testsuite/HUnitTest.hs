@@ -1,7 +1,6 @@
 module Main where
 
 import Test.HUnit
-
 import Test.Framework (defaultMain, testGroup)
 import Test.Framework.Providers.HUnit (hUnitTestToTests)
 
@@ -12,12 +11,20 @@ addition = TestCase(
   )
 
 multiplication :: Test
-multiplication = TestCase(
-    assertEqual "two times two is four"  4  (2*2) 
-  )
+multiplication = TestCase $ assertEqual 
+  "two times two is four"  4  (2*2) 
+
+union :: Test
+union = TestCase $ assertBool 
+  "union of True and False is True" (True || False)
+
 
 verboseTests :: Test
-verboseTests = TestList [TestLabel "Addition" addition, TestLabel "Multiplication" multiplication]
+verboseTests = TestList [
+    TestLabel "Addition" addition, 
+    TestLabel "Multiplication" multiplication,
+    TestLabel "Union" union
+  ]
 
 
 succintTests :: Test

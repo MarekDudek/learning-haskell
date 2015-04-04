@@ -12,6 +12,8 @@ Library
   Exposed-Modules:     SomeModule
   Build-Depends:       base >= 4
 
+-- Test libraries
+
 Test-Suite hunit-test
     Type:              exitcode-stdio-1.0
     HS-Source-Dirs:    testsuite
@@ -29,3 +31,15 @@ Test-Suite quickcheck-test
                        QuickCheck >= 2,
                        test-framework,
                        test-framework-quickcheck2
+
+
+-- Learn You a Haskell for Great Good
+
+Test-Suite starting-out
+    Type:              exitcode-stdio-1.0
+    HS-Source-Dirs:    testsuite
+    Main-Is:           LearningHaskell/StartingOut.hs
+    Build-Depends:     base >= 4,
+                       HUnit,
+                       test-framework,
+                       test-framework-hunit
