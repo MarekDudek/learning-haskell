@@ -6,8 +6,20 @@ import Test.Framework.Providers.HUnit (hUnitTestToTests)
 
 
 main :: IO ()
-main = defaultMain []
+main = defaultMain [
+    testGroup "Arithmetic" $ hUnitTestToTests arithmetic,
+    testGroup "Logical"    $ hUnitTestToTests logical
+  ]
 
-arithmeticTests = test [
-  2 + 15 ~=? 17
+arithmetic = test [
+    2 + 15       ~=?  17,
+    49 * 100     ~=?  4900,
+    1892 - 1472  ~=?  420,
+    5 / 2        ~=?  2.5
   ] 
+
+logical = test [
+    True && False  ~=?  False,
+    True || False  ~=?  True,
+    not False      ~=?  True
+  ]
