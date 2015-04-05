@@ -4,6 +4,7 @@ import Test.HUnit
 import Test.Framework (defaultMain, testGroup)
 import Test.Framework.Providers.HUnit (hUnitTestToTests)
 
+import LearningHaskell.StartingOut
 
 main :: IO ()
 main = defaultMain [
@@ -11,7 +12,8 @@ main = defaultMain [
     testGroup "Logical"     $ hUnitTestToTests logical,
     testGroup "Comparisons" $ hUnitTestToTests comparisons,
     testGroup "Enumeration" $ hUnitTestToTests enumeration,
-    testGroup "Ordering"    $ hUnitTestToTests ordering 
+    testGroup "Ordering"    $ hUnitTestToTests ordering, 
+    testGroup "Functions"   $ hUnitTestToTests functions 
   ]
 
 arithmetic = test [
@@ -48,4 +50,9 @@ enumeration = test [
 ordering = test [
     min 9 10     ~=?  9,
     max 100 101  ~=?  101
+  ]
+
+functions = test [
+    doubleMe 3    ~=?  6,
+    doubleUs 2 3  ~=?  10
   ]
