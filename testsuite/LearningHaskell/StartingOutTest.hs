@@ -10,15 +10,18 @@ import LearningHaskell.StartingOut
 
 main :: IO ()
 main = defaultMain [
-    testGroup "Numbers"     $ hUnitTestToTests numbers,
-    testGroup "Arithmetic"  $ hUnitTestToTests arithmetic,
-    testGroup "Logical"     $ hUnitTestToTests logical,
-    testGroup "Equality"    $ hUnitTestToTests equality,
-    testGroup "Comparison"  $ hUnitTestToTests comparison,
-    testGroup "Conditional" $ hUnitTestToTests conditional, 
-    testGroup "Enumeration" $ hUnitTestToTests enumeration,
-    testGroup "Ordering"    $ hUnitTestToTests ordering, 
-    testGroup "Functions"   $ hUnitTestToTests functions 
+    testGroup "Numbers"              $ hUnitTestToTests numbers,
+    testGroup "Arithmetic"           $ hUnitTestToTests arithmetic,
+    testGroup "Logical"              $ hUnitTestToTests logical,
+    testGroup "Equality"             $ hUnitTestToTests equality,
+    testGroup "Comparison"           $ hUnitTestToTests comparison,
+    testGroup "Conditional"          $ hUnitTestToTests conditional,
+    testGroup "Enumeration"          $ hUnitTestToTests enumeration,
+    testGroup "Ordering"             $ hUnitTestToTests ordering,
+    testGroup "Functions"            $ hUnitTestToTests functions,
+    testGroup "Creating lists"       $ hUnitTestToTests creatingLists,
+    testGroup "Accessing lists"      $ hUnitTestToTests accessingLists,
+    testGroup "Selecting from lists" $ hUnitTestToTests selectingFromList
   ]
 
 -- Ready, set, go!
@@ -77,3 +80,23 @@ functions = test [
   ]
 
 -- An intro to lists
+
+creatingLists = test [
+    [1, 2, 4, 7]  ~=?  1:2:4:7:[],
+    1:[2, 4, 7]   ~=?  [1, 2] ++ [4, 7],
+    "hello"       ~=?  'h':"ello"
+  ]
+
+accessingLists = test [
+    [2, 4, 7] !! 0      ~=?  2,
+    length [2, 4, 7]    ~=?  3,
+    null [2, 4, 7]      ~=?  False,
+    4 `elem` [2, 4, 7]  ~=?  True
+  ]
+
+selectingFromList = test [
+    head [2, 4, 7]  ~=?  2,
+    tail [2, 4, 7]  ~=?  [4, 7],
+    init [2, 4, 7]  ~=?  [2, 4],
+    last [2, 4, 7]  ~=?  7
+  ]
