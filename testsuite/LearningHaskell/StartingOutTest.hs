@@ -21,7 +21,8 @@ main = defaultMain [
     testGroup "Functions"            $ hUnitTestToTests functions,
     testGroup "Creating lists"       $ hUnitTestToTests creatingLists,
     testGroup "Accessing lists"      $ hUnitTestToTests accessingLists,
-    testGroup "Selecting from lists" $ hUnitTestToTests selectingFromList
+    testGroup "Selecting from lists" $ hUnitTestToTests selectingFromList,
+    testGroup "Processing lists"     $ hUnitTestToTests processingLists 
   ]
 
 -- Ready, set, go!
@@ -95,8 +96,20 @@ accessingLists = test [
   ]
 
 selectingFromList = test [
-    head [2, 4, 7]  ~=?  2,
-    tail [2, 4, 7]  ~=?  [4, 7],
-    init [2, 4, 7]  ~=?  [2, 4],
-    last [2, 4, 7]  ~=?  7
+    head [2, 4, 7]    ~=?  2,
+    tail [2, 4, 7]    ~=?  [4, 7],
+    init [2, 4, 7]    ~=?  [2, 4],
+    last [2, 4, 7]    ~=?  7,
+    take 1 [1, 2, 4]  ~=?  [1],
+    take 4 [1, 2, 4]  ~=?  [1, 2, 4],
+    drop 2 [1, 2, 4]  ~=?  [4],
+    drop 4 [1, 2, 4]  ~=?  []
+  ]
+
+processingLists = test [
+    minimum [1, 2, 4, 7]  ~=?  1,
+    maximum [1, 2, 4, 7]  ~=?  7,
+    sum [1, 2, 3, 4]      ~=?  10, 
+    product [1, 2, 3, 4]  ~=?  24,
+    reverse [1, 2, 3, 4]  ~=?  [4, 3, 2, 1] 
   ]
